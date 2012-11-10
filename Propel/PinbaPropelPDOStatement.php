@@ -21,7 +21,9 @@ class PinbaPropelPDOStatement extends \DebugPDOStatement
 
         $return = parent::execute($input_parameters);
 
-        $this->timer->addTime();
+        if ($this->timer) {
+            $this->timer->addTime();
+        }
 
         return $return;
     }
@@ -37,7 +39,9 @@ class PinbaPropelPDOStatement extends \DebugPDOStatement
             'operation' => $this->getOperationFromQuery(),
         );
 
-        $this->timer = TimerManager::getInstance()->getTimer('PinbaPropelPDOStatement', $tags);
+        if (TimerManager::getInstance()) { // False in command line
+            $this->timer = TimerManager::getInstance()->getTimer('PinbaPropelPDOStatement', $tags);
+        }
     }
 
     /**
