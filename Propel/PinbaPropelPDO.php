@@ -32,6 +32,13 @@ class PinbaPropelPDO extends \DebugPDO
     protected function setDbNameFromDsn($dsn)
     {
         preg_match('#dbname=([a-zA-Z0-9\_]+)#', $dsn, $matches);
+        
+        if (empty($matches)) {
+            $this->dbname = null;
+
+            return;
+        }
+
         $this->dbname=$matches[1];
     }
 
