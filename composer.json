@@ -1,0 +1,28 @@
+{
+    "name": "cedriclombardot/pinba-bundle",
+    "version": "1.0.0",
+    "description": "Pinba bundle for symfony2",
+    "keywords": ["Symfony2", "pinba", "monitoring", "analytics", "bundle"],
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Cedric LOMBARDOT",
+            "email": "cedric.lombardot@gmail.com"
+        },
+        {
+            "name": "Symfony Community",
+            "homepage": "http://github.com/cedriclombardot/PinbaBundle/contributors"
+        }
+    ],
+    "require": {
+        "symfony/symfony": "2.1.*",
+    },
+    "suggest": {
+        "propel/propel1": "Use propel to query your db an alayse queries perf with pinba"
+    },
+    "target-dir": "Cedriclombardot/PinbaBundle",
+    "autoload": {
+        "psr-0": { "Cedriclombardot\\PinbaBundle": "" }
+    }
+}
