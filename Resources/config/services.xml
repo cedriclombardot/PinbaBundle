@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="pinba.request_listener.class">Cedriclombardot\PinbaBundle\EventListener\RequestListener</parameter>
+        <parameter key="pinba.context.class">Cedriclombardot\PinbaBundle\Pinba\Context</parameter>
+    </parameters>
+
+    <services>
+        <service id="pinba.request_listener" class="%pinba.request_listener.class%" public="true">
+            <tag name="kernel.event_listener" event="kernel.request" method="onKernelRequest"/>
+            <argument type="service" id="pinba.context" />
+        </service>
+
+        <service id="pinba.context" class="%pinba.context.class%" public="true">
+        </service>
+
+    </services>
+</container>
