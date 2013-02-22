@@ -49,14 +49,14 @@ class ContextTest extends WebTestCase
 
         $context = new ContextMock('{HTTP_HOST}{REQUEST_URI}');
         $this->assertEquals(
-            $serverVars['PATH_INFO'].$serverVars['REQUEST_URI'],
+            $serverVars['HTTP_HOST'].$serverVars['REQUEST_URI'],
             $context->extractScriptNameMock($this->getRequest($serverVars)),
             'Works with two vars.'
         );
 
         $context = new ContextMock('test: {HTTP_HOST}/{REQUEST_URI} !');
         $this->assertEquals(
-            'test: '.$serverVars['PATH_INFO'].'/'.$serverVars['REQUEST_URI'].' !',
+            'test: '.$serverVars['HTTP_HOST'].'/'.$serverVars['REQUEST_URI'].' !',
             $context->extractScriptNameMock($this->getRequest($serverVars)),
             'Works with two vars and some chars.'
         );
