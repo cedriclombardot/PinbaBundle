@@ -20,6 +20,13 @@ $bundles = array(
 );
 ```
 
+Custom script name rendering
+```
+# config.yml
+pinba:
+    script_name_pattern: "{PATH_INFO}" # use routing synthax to inject more server params into pinba script name log
+```
+
 ## With propel
 
 Update your config.yml
