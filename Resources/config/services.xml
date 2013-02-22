@@ -16,6 +16,7 @@
         </service>
 
         <service id="pinba.context" class="%pinba.context.class%" public="true">
+            <argument>%pinba.script_name_pattern%</argument>
         </service>
 
     </services>
