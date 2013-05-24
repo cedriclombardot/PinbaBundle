@@ -16,7 +16,7 @@
         }
     ],
     "require": {
-        "symfony/symfony": "<2.3.0"
+        "symfony/symfony": "~2.1"
     },
     "suggest": {
         "propel/propel1": "Use propel to query your db an alayse queries perf with pinba"
